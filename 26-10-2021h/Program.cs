@@ -28,7 +28,7 @@ namespace _26_10_2021h
             }
             ilkreqem = inputm / mertebe;
             Console.WriteLine(inputm - ilkreqem * mertebe - sonreqem + ilkreqem + sonreqem * mertebe);
- 
+
             #endregion
 
             #region İki integer array-i arasında dəyəri en böyük olan elementi tapın. Məs: {3,1,7,2}  & {10,0,3,1} - output - 10
@@ -68,56 +68,41 @@ namespace _26_10_2021h
 
             #region ededin sade bolenlerinin sayi
 
-            while (true)
+
+            int input = 7;
+            int sadecount = 0;
+            int eded = 3;
+            if (input % 2 == 0)
             {
-                int input = Convert.ToInt32(Console.ReadLine());
-                int sadecount = 0;
-                int eded = 3;
-                if (input % 2 == 0)
-                {
-                    sadecount++;
-                }
-
-                while (eded <= input)
-                {
-                    if (input % eded == 0)
-                    {
-                        if (sadedimi(eded))
-                        {
-                            sadecount++;
-                        }
-
-                    }
-                    eded++;
-                }
-                Console.WriteLine(sadecount);
-                #endregion
+                sadecount++;
             }
+
+            while (eded <= input)
+            {
+                if (input % eded == 0)
+                {
+                    if (sadedimi(eded))
+                    {
+                        sadecount++;
+                    }
+                }
+                eded++;
+            }
+            Console.WriteLine(sadecount);
+            #endregion
+
         }
         static bool sadedimi(int eded)
         {
-
             Boolean sadedimi = true;
-
-
-
-
             for (int i = 2; i * i <= eded; i++)
             {
                 if (eded % i == 0)
                 {
                     sadedimi = false;
-
-
-
-
                 }
-
             }
             return sadedimi;
-
-
-
         }
     }
 }
